@@ -1,0 +1,26 @@
+{
+  "build": {
+    "args": {
+      "VARIANT": "bullseye"
+    },
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "amazonwebservices.aws-toolkit-vscode"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  },
+  "features": {
+    "ghcr.io/bananalab/devcontainer-features/aws-cli:latest": {},
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE},target=/home/vscode,type=bind,consistency=cached"
+  ],
+  "remoteUser": "vscode"
+}
