@@ -67,7 +67,9 @@ phases:
 ```
 5. Click `Update Buildspec`.
 6. Click `Start Build`.
+
 references:
+
 https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
 
 <img src="assets/codebuild_buildspec_1.gif"
