@@ -1,3 +1,7 @@
+1. From the `devops-bootcamp` CodeCommit repository edit the `buildspec.yml`
+2. Paste the YAML below and commit the changes.
+3. From the `devops-bootcamp` CodeBuild project click `Start Build`. 
+
 ```yaml
 version: 0.2
 
