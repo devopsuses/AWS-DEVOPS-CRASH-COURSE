@@ -1,3 +1,8 @@
+1. From the `devops-bootcamp` CodeBuild Project` select `edit / Buildspec`.
+2. Select `Use a Buildspec File' and click `update buildspec`.
+3. From the `devops-bootcamp` CodeCommit repository select `Add file / Create File`.
+4. Paste the YAML below. Name the file `buildspec.yml` and `Commit changes`.
+
 ```yaml
 version: 0.2
 
