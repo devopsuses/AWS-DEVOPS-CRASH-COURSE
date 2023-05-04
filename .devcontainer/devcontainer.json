@@ -1,26 +1,9 @@
 {
-  "build": {
-    "args": {
-      "VARIANT": "bullseye"
-    },
-    "dockerfile": "Dockerfile"
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "amazonwebservices.aws-toolkit-vscode"
-      ],
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "zsh"
-      }
-    }
-  },
-  "features": {
-    "ghcr.io/bananalab/devcontainer-features/aws-cli:latest": {},
-    "ghcr.io/devcontainers/features/node:1": {}
-  },
+  "name": "DevOps Bootcamp",
+  "image": "bananalab/devcontainer",
   "mounts": [
-    "source=${localEnv:HOME}${localEnv:USERPROFILE},target=/home/vscode,type=bind,consistency=cached"
+      "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
-  "remoteUser": "vscode"
+  "containerUser": "bootcamp",
+  "remoteUser": "bootcamp"
 }
