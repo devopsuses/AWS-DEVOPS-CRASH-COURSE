@@ -77,10 +77,6 @@
 ```
 2. Create another group named `code-owners` and attach the policy from step 1.
 
-<img src="assets/branch_protection.gif"
-     alt="Branch Protection"
-     style="float: left; margin-right: 10px;" />
-
 ## References
 https://docs.amazonaws.cn/en_us/codecommit/latest/userguide/how-to-conditional-branch.html
 https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodecommit.html

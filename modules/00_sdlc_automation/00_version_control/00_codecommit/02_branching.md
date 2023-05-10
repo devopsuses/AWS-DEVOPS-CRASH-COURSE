@@ -6,11 +6,7 @@
 4. From a terminal type `git commit -m 'Update README'`
 5. From a terminal type `git push`
 6. From the CodeCommit Console click `Create Pull Request`
-7. Select `Destination = main`,  `Source = Feature`
+7. Select `Destination = main`,  `Source = feature`
 8. Click `Merge`
 9. From the terminal type `git checkout main`
 10. From the terminal type `git pull`
-
-<img src="assets/branching.gif"
-     alt="branching"
-     style="float: left; margin-right: 10px;" />

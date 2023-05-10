@@ -6,10 +6,6 @@
 3. Click `Generate Credentials`.
 4. Click `Download Credentials`.
 
-<img src="assets/https_credential.gif"
-     alt="Create Repo"
-     style="float: left; margin-right: 10px;" />
-
 ## Method 2: SSH Key
 1. From a commandline terminal run `ssh-keygen`.
 2. Enter the filename `~/.ssh/codecommit`.
@@ -21,15 +17,6 @@
 8. Paste the content of the file copied in step 4.
 9. Click `Upload SSH Public Key`.
 10. Edit `~/.ssh/config`. Create and entry for CodeCommit:
-```
-Host git-codecommit.*.amazonaws.com
-User <ssh key id from IaM console>
-IdentityFile ~/.ssh/codecommit
-```
-
-<img src="assets/ssh_credential.gif"
-     alt="Create Repo"
-     style="float: left; margin-right: 10px;" />
 
 ## Method 3: gRPC
 1. Ensure that Python is installed and is in your PATH.
@@ -37,7 +24,3 @@ IdentityFile ~/.ssh/codecommit
 ``` bash
 pip3 install git-remote-codecommit
 ```
-
-<img src="assets/grpc_credential.gif"
-     alt="Create Repo"
-     style="float: left; margin-right: 10px;" />

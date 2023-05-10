@@ -1,3 +1,0 @@
-[submodule "app/yelb"]
-	path = app/yelb
-	url = https://github.com/mreferre/yelb.git
