@@ -2,7 +2,7 @@
 
 ## Create Launch Template
 1. Open the EC2 console and select `Launch Templates / Create Template`.
-2. Under `Application and OS Images` select `Quick Start / Amazon Linux`.
+2. Under `Application and OS Images` select `Quick Start / Amazon Linux 2`.
 3. Select `Create Security Group`. Name the security group `devops-bootcamp`.
 4. Under `description` enter `Allow HTTP`
 5. Under `Inbound security group rules` create a rule to allow port 80 from anywhere. 
