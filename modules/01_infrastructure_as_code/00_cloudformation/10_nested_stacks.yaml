@@ -1,0 +1,20 @@
+# CloudFormation stacks can include other stacks.  The primary use case is
+# reusable code libraries.
+Resources:
+  wordPressStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://cloudformation-templates-us-west-1.s3.us-west-1.amazonaws.com/WordPress_Single_Instance.template
+      Parameters:
+        DBName: wordpressdb
+        DBPassword: password
+        DBRootPassword: password
+        DBUser: admin
+        InstanceType: t2.micro
+        KeyName: default
+        SSHLocation: 0.0.0.0/0
+Outputs:
+  wordPressStack:
+    Value: !Ref wordPressStack
+  nestedOutput:
+    Value: !GetAtt wordPressStack.Outputs.WebsiteURL

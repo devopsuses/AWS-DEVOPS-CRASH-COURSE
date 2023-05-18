@@ -1,0 +1,16 @@
+# AWS also publishes public paramters.
+# You can browse these in the Paramter Store by selecting Publi parameters.
+
+Parameters:
+  InstanceType:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: YelbEC2InstanceType
+  ImageId: 
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
+Resources:
+  YelbInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref ImageId
+      InstanceType: !Ref InstanceType

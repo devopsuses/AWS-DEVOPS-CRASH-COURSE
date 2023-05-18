@@ -1,0 +1,14 @@
+# Parameters can also reference values stored in SSM.
+# In this example a parameter named `/YelbEC2InstanceType`
+# should exist.  Alternative another SSM paramter caould be entered
+# when the stack is created.
+Parameters:
+  InstanceType:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: YelbEC2InstanceType
+Resources:
+  YelbInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-087bf433bedbc2ef7
+      InstanceType: !Ref InstanceType

@@ -1,0 +1,21 @@
+# Outputs
+# CloudFormation can define output vaules.  These can be used to communicate
+# details of resources created by a stack.
+Resources:
+  sharedVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: 'true'
+      EnableDnsHostnames: 'true'
+
+Outputs:
+  Vpc:
+    Description: Shared VPC for resources.
+    Value:
+      Ref: sharedVPC
+    Export:
+      Name: !Join
+            - '-'
+            - - 'sharedVpc'
+              - !Ref AWS::Region

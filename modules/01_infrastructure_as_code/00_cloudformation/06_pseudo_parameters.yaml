@@ -1,0 +1,14 @@
+# CloudFormation supports pseudo parameters as well.
+# Pseudo parameters are values available to all stacks
+# without the need to explicitly create them.
+# See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html
+
+Resources:
+  MyBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Join
+                  - '-'
+                  - - 'mybucket'
+                    - !Ref AWS::Region
+                    - !Ref AWS::AccountId

@@ -1,0 +1,17 @@
+# Outputs that have been published with the Export keyword are available for
+# use in opther stacks.
+
+Resources:
+  mySubnet:
+      Type: AWS::EC2::Subnet
+      Properties:
+        VpcId: 
+          Fn::ImportValue:
+            !Join
+            - '-'
+            - - 'sharedVpc'
+              - !Ref AWS::Region
+        CidrBlock: 10.0.0.0/24
+        AvailabilityZone: "us-west-1b"
+
+# Note: Stacks that are referenced by other stacks cannot be deleted.
