@@ -1,0 +1,14 @@
+# Custom resource Lambdas ar consumed with the Custom:: type
+
+Resources:
+  LatestTemplateVersion:
+    Type: Custom::GetLatestLaunchTemplateVersion
+    Properties:
+      ServiceToken: !ImportValue LatestTemplateVersionLambdaArn
+      LaunchTemplateName: devops-bootcamp
+  YelbInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      LaunchTemplate:
+        LaunchTemplateName: devops-bootcamp
+        Version: !GetAtt LatestTemplateVersion.LatestVersion

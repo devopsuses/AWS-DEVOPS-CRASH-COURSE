@@ -1,0 +1,97 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  Sample of Custom Resource with Lambda function.
+  Modified from AWS doc.
+Resources:
+  LatestTemplateVersionLambda:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Code:
+        ZipFile: |
+          import json
+          import boto3
+          from botocore.vendored import requests
+          import logging
+
+          def lambda_handler(event, context):
+              logging.warning(event)
+              try:
+                  client = boto3.client("ec2")
+                  launch_template = client.describe_launch_templates(
+                      LaunchTemplateNames=[
+                          event["ResourceProperties"]["LaunchTemplateName"]
+                      ],
+                  )["LaunchTemplates"][0]
+                  logging.warning(launch_template)
+                      
+                  send_response_cfn(
+                      event,context,
+                      "SUCCESS",
+                      reason=None,
+                      template_id=launch_template["LaunchTemplateId"],
+                      latest_template_version_number=launch_template["LatestVersionNumber"]
+                  )
+              except Exception as e:
+                  send_response_cfn(
+                      event,
+                      context,
+                      "FAILURE",
+                      reason=e,
+                      template_id=None,
+                      latest_template_version_number=None
+                  )
+              
+          def send_response_cfn(event, context, status, reason, template_id, latest_template_version_number):
+              response_body = {
+                  'Status': status,
+                  'Reason': reason or '',
+                  'PhysicalResourceId': template_id,
+                  'StackId': event['StackId'],
+                  'RequestId': event['RequestId'],
+                  'LogicalResourceId': event['LogicalResourceId'],
+                  'Data': { "LatestVersion": latest_template_version_number}
+              }
+              logging.warning(response_body)
+              try:
+                  requests.put(event['ResponseURL'], data=json.dumps(response_body))
+              except:
+                  logging.exception("Failed to send response.")
+
+      Handler: index.lambda_handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Runtime: python3.7
+      Timeout: 30
+  LambdaExecutionRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - "sts:AssumeRole"
+      Path: /
+      Policies:
+        - PolicyName: root
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "logs:CreateLogGroup"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                Resource: "arn:aws:logs:*:*:*"
+              - Effect: Allow
+                Action:
+                  - "ec2:DescribeLaunchTemplates"
+                Resource: "*"
+Outputs:
+  LatestTemplateVersionLambdaArn:
+    Description: Arn of LatestTemplateVersionLambda Function
+    Value: !GetAtt LatestTemplateVersionLambda.Arn
+    Export:
+      Name: LatestTemplateVersionLambdaArn

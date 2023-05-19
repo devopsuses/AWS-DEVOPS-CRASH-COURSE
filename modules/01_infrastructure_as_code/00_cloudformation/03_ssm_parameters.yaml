@@ -12,3 +12,4 @@ Resources:
     Properties:
       ImageId: ami-087bf433bedbc2ef7
       InstanceType: !Ref InstanceType
+      
