@@ -1,0 +1,11 @@
+#!/home/bootcamp/my-app/.env/bin/python
+
+import jsii
+import sys
+
+__jsii_assembly__ = jsii.JSIIAssembly.load(
+    "projen", "0.71.82", "projen", "projen@0.71.82.jsii.tgz"
+)
+
+exit_code = __jsii_assembly__.invokeBinScript("projen", "projen", sys.argv[1:])
+exit(exit_code)

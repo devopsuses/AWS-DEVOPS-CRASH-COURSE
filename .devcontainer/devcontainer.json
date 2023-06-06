@@ -1,6 +1,6 @@
 {
   "name": "DevOps Bootcamp",
-  "image": "bananalab/devcontainer",
+  "image": "bananalab/devcontainer:dab2d10",
   "mounts": [
       "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],

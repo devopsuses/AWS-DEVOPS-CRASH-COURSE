@@ -13,6 +13,8 @@ Resources:
           from botocore.vendored import requests
           import logging
 
+          logging.basicConfig(level=logging.DEBUG)
+
           def lambda_handler(event, context):
               logging.warning(event)
               try:
@@ -22,7 +24,7 @@ Resources:
                           event["ResourceProperties"]["LaunchTemplateName"]
                       ],
                   )["LaunchTemplates"][0]
-                  logging.warning(launch_template)
+                  logging.debug(launch_template)
                       
                   send_response_cfn(
                       event,context,
@@ -51,7 +53,7 @@ Resources:
                   'LogicalResourceId': event['LogicalResourceId'],
                   'Data': { "LatestVersion": latest_template_version_number}
               }
-              logging.warning(response_body)
+              logging.debug(response_body)
               try:
                   requests.put(event['ResponseURL'], data=json.dumps(response_body))
               except:
