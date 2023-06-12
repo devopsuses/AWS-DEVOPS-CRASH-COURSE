@@ -9,6 +9,9 @@ A friendly greeting.
 # Activate Python virtual environment
 source .env/bin/activate
 
+# Install dependencies
+python -m pip install -r requirements.txt
+
 # Deploy CDK App
 npx cdk deploy
 ```

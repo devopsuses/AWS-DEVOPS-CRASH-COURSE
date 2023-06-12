@@ -13,7 +13,7 @@
 1. From the IAM Roles console click `Create Role`
 2. Select `Trusted entity type AWS Service`
 3. Select `Common use cases = EC2`
-4. Click `Add permissions` and these policies: `AmazonSSMManagedInstanceCore`, `AmazonEC2RoleforAWSCodeDeploy`, `CloudWatchAgentServerPolicy`, `CloudWatchLogsFullAccess`, `AmazonS3ReadOnlyAccess`
+4. Click `Add permissions` and these policies: `AmazonSSMManagedInstanceCore`, `CloudWatchAgentAdminPolicy`, `AmazonEC2RoleforAWSCodeDeploy`, `CloudWatchAgentServerPolicy`, `CloudWatchLogsFullAccess`, `AmazonS3ReadOnlyAccess`
 5. Name the role `DevOpsBootcampInstanceRole`
 6. Click `Create Role`
 
