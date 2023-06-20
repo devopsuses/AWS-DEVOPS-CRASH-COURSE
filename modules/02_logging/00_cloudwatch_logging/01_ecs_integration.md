@@ -16,7 +16,7 @@ const yelbuicontainer = yelbuitaskdef.addContainer("yelb-ui-container", {
 cdk deploy
 ```
 
-# Add a log generator
+## Add a log generator
 Since our application doesn't have any traffic let's generate some logs.
 
 1. Add a new task definition and service:
@@ -39,3 +39,9 @@ Since our application doesn't have any traffic let's generate some logs.
       taskDefinition: logjamtaskdef,
     });  
 ```
+
+## Explore the generated logs
+
+1. From the ECS logjam service click logs.  Browse the logs.
+2. Click `View in Cloudwatch`
+3. Explore the logs here.
