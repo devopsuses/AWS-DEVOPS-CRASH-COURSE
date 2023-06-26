@@ -4,7 +4,8 @@ Flow logs create a record of all traffic in and out of a VPC or subnet.
 
 1. Select the VPC created for the Yelb ECS cluster.
 2. Select `Flow logs / Create flow log`.
-3. Create `Athena integration`.
+3. Create [`Athena integration`](https://docs.amazonaws.cn/en_us/vpc/latest/userguide/flow-logs-athena.html).
+- or -
 4. Create Athena table manually.
 ```SQL
 CREATE EXTERNAL TABLE IF NOT EXISTS vpcflowlogs (
@@ -54,4 +55,6 @@ TBLPROPERTIES
 )
 ```
 
-https://docs.amazonaws.cn/en_us/vpc/latest/userguide/flow-logs-athena.html
+Quicksight is a Business Intelligence offering from AWS that integrates wth Athena and other dat providers.  There is no free tier but there is a limited trial period.
+
+Quicksight integration https://aws.amazon.com/blogs/big-data/analyzing-vpc-flow-logs-using-amazon-athena-and-amazon-quicksight/
