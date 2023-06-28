@@ -9,8 +9,10 @@ Like most AWS services CodeCommit emits events when the state of the repository 
      1. Name `devops-bootcamp-repo-change`. Click `Next`.
      2. For `Sample events` select `CodeCommit Repository State Change`.
      3. Under `Event pattern` select `CodeCommit` for the pattern and `CodeCommit Repository State Change` for`Event type`.
-     4. Select `Specific resource by ARN` and enter `arn:aws:codecommit:us-east-1:123456789012:devops-bootcamp`.
-     5. Click `Next`.
-     6. Select the `SNS` topic.
-     7. Click `Create rule`.
+        > Explore the CodeCommit sample event.
+     5. Select `Specific resource by ARN` and enter `arn:aws:codecommit:us-east-1:123456789012:devops-bootcamp`.
+        > Explore EventBridge [Content Filters](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns-content-based-filtering.html).
+     6. Click `Next`.
+     7. Select the `SNS` topic.
+     8. Click `Create rule`.
         
