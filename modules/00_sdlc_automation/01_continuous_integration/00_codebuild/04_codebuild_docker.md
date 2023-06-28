@@ -1,5 +1,6 @@
 references:
-https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html
+- https://docs.aws.amazon.com/codebuild/latest/userguide/sample-docker.html
+- https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-env-vars.html
 
 ```yaml
 version: 0.2
