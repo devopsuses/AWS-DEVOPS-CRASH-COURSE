@@ -10,3 +10,4 @@ Artifacts represent the product of the build process.
 5. In the `Namespace-type` field select `Build ID`
 6. For `Artifacts Packaging` select `Zip`.
 7. Leave the rest of the fields default.
+8. Run a build and verify artifacts were created.
