@@ -48,6 +48,9 @@
   ]
 }
 ```
+
+>>  Explore [IAM actions, resources, and condition keys for CodeCommit](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodecommit.html)
+
 3. Name the policy `CodeCommitDevAcces`
 4. Add the description `Allow developers to push to branches other than main.`
 5. From the IAM console select `User Groups` and click `Create User Group`
