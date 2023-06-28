@@ -8,8 +8,8 @@ Codebuild can build images and push them to repositories, however it doesn't hav
 4. Create a new `Build project`.
 5. Create an environment variable `AWS_ACCOUNT_ID=<your AWS account ID>`
 6. Update the service role permission policy to allow access to the repository.
-   ```json
-   {
+```json
+{
   "Statement": [
     {
       "Action": [
