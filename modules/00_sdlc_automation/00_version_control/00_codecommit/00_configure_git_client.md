@@ -6,7 +6,14 @@
 3. Click `Generate Credentials`.
 4. Click `Download Credentials`.
 
-## Method 2: SSH Key
+## Method 2: gRPC
+1. Ensure that Python is installed and is in your PATH.
+2.  Install git-remote-codecommit:
+``` bash
+pip3 install git-remote-codecommit
+```
+
+## Method 3: SSH Key
 1. From a commandline terminal run `ssh-keygen`.
 2. Enter the filename `~/.ssh/codecommit`.
 3. Leave the passphrase blank.
@@ -18,9 +25,3 @@
 9. Click `Upload SSH Public Key`.
 10. Edit `~/.ssh/config`. Create and entry for CodeCommit:
 
-## Method 3: gRPC
-1. Ensure that Python is installed and is in your PATH.
-2.  Install git-remote-codecommit:
-``` bash
-pip3 install git-remote-codecommit
-```
