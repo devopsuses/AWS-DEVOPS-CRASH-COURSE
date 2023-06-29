@@ -1,4 +1,4 @@
-# CodeBuild events
+# CodeCommit events
 
 Like most AWS services CodeCommit emits events when the state of the repository changes.
 
